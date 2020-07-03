@@ -1,0 +1,51 @@
+body{
+	background-image:url("images/silverware.jpg"); 
+	color: #404040 ;
+	font-size: 11pt;
+	font-family: georgia,garamond,serif;
+}
+h2
+{
+	
+	color: #A4A400;
+	background-color: #F0F0F0 ;
+	font-family: sans-serif;
+	text-align: center;
+	font-weight:  bold;
+	font-size: 22pt;
+	text-decoration: underline;
+}
+h3
+{
+	
+	color: #A4A400;
+	background-color: #F0F0F0 ;
+	font-family: sans-serif;
+	font-weight:  normal;
+	font-size: 18pt;
+	text-decoration: underline;
+}
+ul#serve
+{
+	list-style-type: none;
+}
+.pb{
+background-color: #FFFFA8
+
+}
+.p1{
+
+}
+a{
+	color:#A4A400;
+}
+em {
+    font-style: bold;
+    
+}
+
+ul.pibullet{
+    list-style-image:url("images/pie_bullet.png");
+
+
+}
