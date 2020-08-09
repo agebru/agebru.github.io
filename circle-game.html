@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+#circle {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    shape-outside: circle();
+    clip-path: circle();
+    background: orange;
+    display:none;
+    
+}
+body{
+	background-color: lightcyan;
+}
+div.dimensions{
+ width: 200px;
+ border: 1px solid black;
+ position:relative;
+ left:30px;
+ top:0px;
+ overflow: hidden;
+
+}
+h1{ 
+ position:relative;
+ left:400px;
+}
+span{
+ padding:5px;
+ font-weight:bold;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  //$("span").parent().css({"color": "red", "border": "2px solid red"});
+  
+  $("button").click(function(){
+  	$("#circle").show();
+  var startTimer= setInterval(function(){
+    
+    var width=$("#circle").width();
+    var height=$("#circle").height();
+    
+    $("#circle").width(width+10).height(height+10);
+    
+    $('#width').html(width);
+    $('#height').html(height);
+    
+     $('input#width').val(Number(width));
+     $('input#height').val(Number(height));
+      
+    },250);
+    
+    // clear timer when clicked on the circle
+  $("#circle").click(function(){
+   	clearInterval(startTimer);
+    $('#width').html("");
+    $('#height').html("");
+    
+    $('input#width').val("");
+    $('input#height').val("");
+  });
+  
+  });// start clicked
+  
+  $("#circle").click(function(){
+  $(this).hide();
+  $("#circle").width(100).height(100);
+  
+  });
+  
+ /* $("button").on({
+  
+  click: function(){
+  	$("#circle").show();
+    setInterval(function(){
+    var width=$("#circle").width();
+    var height=$("#circle").height();
+    $("#circle").width(width+10).height(height+10);
+      
+    },250)
+  }// end of click function
+  
+  */
+  
+  
+//  });
+  
+  
+});
+</script>
+</head>
+<body>
+<h1> Circle Game!</h1>
+<div style="text-align:center">
+  
+  <button>Start</button>
+      
+      
+   <div class="dimensions"> 
+      Width:<input id="width" type="number" value="0"/> <br/>
+      Growth Amnt: <input id="height" type="number" value="0"/><br/>
+      Number of Circles: <input id="num-circles" type="number" value="1" disabled/>
+   </div> 
+  
+  <div id="circle"></div>
+  
+</div>
+
+</body>
+</html> 
